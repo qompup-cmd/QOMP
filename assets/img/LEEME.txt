@@ -1,0 +1,10 @@
+Coloca aquí las imágenes del sitio (fotos de integrantes, laboratorio, galería, logo, mapa).
+
+Sugerencias de nombres:
+        -> logotipo del grupo
+  integrantes/ab.jpg       -> fotos de integrantes (cuadradas, ~600x600 px)
+  galeria/lab-01.jpg       -> fotos de la galería (4:3, ~1200x900 px)
+  noticias/nota-01.jpg     -> imágenes de las noticias (16:9)
+
+Formatos recomendados: JPG para fotos, PNG/SVG para logos.
+Optimiza las imágenes (por ejemplo con squoosh.app) para que el sitio cargue rápido.

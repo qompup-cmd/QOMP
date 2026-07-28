@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Quantum Optics and Condensed Matter Physics</title>
+  <meta name="description" content="Contacta con el Quantum Optics and Condensed Matter Physics: dirección, correo, teléfono y formulario.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=7">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor nav">
+      <a class="marca" href="index.html">
+        <img class="marca__img" src="assets/img/logo-qomp.png" alt="QOMP - Quantum Optics and Condensed Matter Physics">
+      </a>
+      <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
+      <ul class="nav__links">
+        <li><a href="index.html" data-i18n="nav.inicio">Inicio</a></li>
+        <li><a href="lineas.html" data-i18n="nav.lineas">Líneas</a></li>
+        <li><a href="integrantes.html" data-i18n="nav.integrantes">Integrantes</a></li>
+        <li><a href="publicaciones.html" data-i18n="nav.publicaciones">Publicaciones</a></li>
+        <li><a href="proyectos.html" data-i18n="nav.proyectos">Proyectos</a></li>
+        <li><a href="infraestructura.html" data-i18n="nav.infraestructura">Infraestructura</a></li>
+        <li><a href="formacion.html" data-i18n="nav.formacion">Formación</a></li>
+        <li><a href="noticias.html" data-i18n="nav.noticias">Noticias</a></li>
+        <li><a href="recursos.html" data-i18n="nav.recursos">Recursos</a></li>
+        <li><a href="galeria.html" data-i18n="nav.galeria">Galería</a></li>
+        <li><a href="contacto.html" data-i18n="nav.contacto">Contacto</a></li>
+        <li class="nav__lang"><button type="button" class="lang-btn" data-lang-toggle>EN</button></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="contenedor page-hero__inner">
+      <div class="migas"><a href="index.html" data-i18n="nav.inicio">Inicio</a> / <span data-i18n="con.miga">Contacto</span></div>
+      <h1 data-i18n="con.h1">Contacto</h1>
+      <p><span data-i18n="con.intro">¿Quieres colaborar, hacer una tesis o saber más sobre nuestro trabajo? Escríbenos.</span> <em data-i18n="con.intro_edit">[EDITAR con tus datos reales]</em></p>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="contacto-grid">
+        <div>
+          <span class="eyebrow" data-i18n="con.eyebrow_donde">Dónde encontrarnos</span>
+          <h2 class="seccion__titulo" style="font-size:1.6rem;" data-i18n="con.info_titulo">Información de contacto</h2>
+          <ul class="info-lista">
+            <li><span class="ic">📍</span><div><strong data-i18n="con.label_direccion">Dirección</strong><span>Departamento de Física, [Facultad / Instituto], [Universidad]. [Calle, ciudad, país]. <em data-i18n="con.direccion_edit">[EDITAR]</em></span></div></li>
+            <li><span class="ic">✉️</span><div><strong data-i18n="con.label_correo">Correo</strong><span><a href="mailto:contacto@ejemplo.edu">contacto@ejemplo.edu</a></span></div></li>
+            <li><span class="ic">📞</span><div><strong data-i18n="con.label_telefono">Teléfono</strong><span>+00 000 000 0000 <em data-i18n="con.telefono_edit">[EDITAR]</em></span></div></li>
+            <li><span class="ic">🕘</span><div><strong data-i18n="con.label_horario">Horario</strong><span data-i18n="con.horario_valor">Lunes a viernes, 9:00 – 18:00</span></div></li>
+            <li><span class="ic">🔗</span><div><strong data-i18n="con.label_redes">Redes / perfiles</strong><span><a href="#">Google Scholar</a> · <a href="#">ORCID</a> · <a href="#">X/Twitter</a> · <a href="#">LinkedIn</a></span></div></li>
+          </ul>
+          <div class="mapa" data-i18n="con.mapa_edit">🗺️ [EDITAR: incrusta aquí un mapa de Google Maps con &lt;iframe&gt;]</div>
+        </div>
+
+        <div>
+          <span class="eyebrow" data-i18n="con.eyebrow_escribenos">Escríbenos</span>
+          <h2 class="seccion__titulo" style="font-size:1.6rem;" data-i18n="con.form_titulo">Formulario de contacto</h2>
+          <form class="form" novalidate>
+            <div class="campo">
+              <label for="nombre" data-i18n="con.label_nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="campo">
+              <label for="email" data-i18n="con.label_email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+            </div>
+            <div class="campo">
+              <label for="asunto" data-i18n="con.label_motivo">Motivo</label>
+              <select id="asunto" name="asunto">
+                <option data-i18n="con.opt_tesis">Interés en una tesis / estancia</option>
+                <option data-i18n="con.opt_colaboracion">Propuesta de colaboración</option>
+                <option data-i18n="con.opt_prensa">Prensa / divulgación</option>
+                <option data-i18n="con.opt_otro">Otro</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="mensaje" data-i18n="con.label_mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primario" data-i18n="con.enviar">Enviar mensaje</button>
+            <p class="form__aviso" style="margin:14px 0 0; font-size:0.9rem;"></p>
+          </form>
+          <p style="margin-top:12px; color:var(--texto-suave); font-size:0.85rem;"><em data-i18n="con.demo_aviso">[EDITAR: el formulario es una demostración. Conéctalo a un servicio como Formspree, Netlify Forms o tu propio backend.]</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__grid">
+        <div>
+          <div class="pie__marca"><img class="pie__logo" src="assets/img/logo-qomp.png" alt="QOMP"> Quantum Optics and Condensed Matter Physics</div>
+          <p style="font-size:0.9rem; max-width:320px;" data-i18n="footer.desc">Investigación en materia condensada, materiales cuánticos y nanotecnología. Universidad de Panamá.</p>
+        </div>
+        <div>
+          <h4 data-i18n="footer.explora">Explora</h4>
+          <ul>
+            <li><a href="lineas.html" data-i18n="footer.lineas">Líneas de investigación</a></li>
+            <li><a href="integrantes.html" data-i18n="nav.integrantes">Integrantes</a></li>
+            <li><a href="publicaciones.html" data-i18n="nav.publicaciones">Publicaciones</a></li>
+            <li><a href="proyectos.html" data-i18n="nav.proyectos">Proyectos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.recursos">Recursos</h4>
+          <ul>
+            <li><a href="infraestructura.html" data-i18n="nav.infraestructura">Infraestructura</a></li>
+            <li><a href="formacion.html" data-i18n="nav.formacion">Formación</a></li>
+            <li><a href="recursos.html" data-i18n="footer.recursosabiertos">Recursos abiertos</a></li>
+            <li><a href="galeria.html" data-i18n="nav.galeria">Galería</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="nav.contacto">Contacto</h4>
+          <ul>
+            <li><a href="mailto:contacto@ejemplo.edu">contacto@ejemplo.edu</a></li>
+            <li><a href="noticias.html" data-i18n="nav.noticias">Noticias</a></li>
+            <li><a href="contacto.html" data-i18n="footer.formulario">Formulario</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie__legal">
+        <span>© <span data-anio>2026</span> Quantum Optics and Condensed Matter Physics. <span data-i18n="footer.derechos">Todos los derechos reservados.</span></span>
+        <span data-i18n="footer.hecho">Hecho con dedicación científica</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js?v=7"></script>
+</body>
+</html>
