@@ -267,6 +267,8 @@ ul { margin: 0; }
 .persona { background: var(--superficie); border: 1px solid var(--borde); border-radius: var(--radio); overflow: hidden; text-align: center; transition: transform var(--transicion), box-shadow var(--transicion); }
 .persona:hover { transform: translateY(-4px); box-shadow: var(--sombra-fuerte); }
 .persona__foto { aspect-ratio: 1 / 1; background: linear-gradient(135deg, var(--gris-100), var(--gris-300)); display: grid; place-items: center; font-family: var(--fuente-titulo); font-size: 2.4rem; color: var(--azul-700); font-weight: 700; }
+.persona__foto img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.persona__links a[href^="mailto:"] { word-break: break-all; }
 .persona__cuerpo { padding: 20px; }
 .persona__cuerpo h3 { margin: 0 0 4px; font-size: 1.1rem; }
 .persona__rol { color: var(--primario); font-weight: 600; font-size: 0.85rem; }
