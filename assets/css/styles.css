@@ -396,3 +396,14 @@ ul { margin: 0; }
   * { scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+
+/* ===== Modo embebido: cuando la web vive dentro del iframe del sitio principal,
+   la cabecera se reduce a una barra de submenú discreta para no competir con el menú anfitrión. ===== */
+html.embebido .cabecera { position: static; background: var(--gris-100); backdrop-filter: none; }
+html.embebido .marca { display: none; }
+html.embebido .nav { height: 46px; justify-content: center; gap: 8px; }
+html.embebido .nav__links { gap: 2px; }
+html.embebido .nav__links a { font-size: 0.83rem; padding: 5px 10px; color: var(--gris-700); }
+html.embebido .nav__links a:hover { background: transparent; color: var(--azul-800); text-decoration: underline; text-underline-offset: 4px; }
+html.embebido .lang-btn { font-size: 0.75rem; padding: 3px 10px; }
