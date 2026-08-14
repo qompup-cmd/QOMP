@@ -3,6 +3,56 @@
   div[id^="qomp-"]:target { display: flex; }
   #qomp-inicio { display: flex; }
   div[id^="qomp-"]:target ~ #qomp-inicio { display: none; }
+
+  /* =========================================================
+     RESPONSIVE — el panel se adapta a tablet y celular.
+     Se usa !important porque los estilos de las tarjetas van
+     en atributos style= en línea y tienen más prioridad.
+     ========================================================= */
+
+  /* ---- Tablet (hasta 900 px): barra lateral más estrecha ---- */
+  @media (max-width: 900px) {
+    div[style*="flex:0 0 240px"] { flex: 0 0 190px !important; padding: 15px !important; }
+    div[id^="qomp-"] { gap: 18px !important; }
+  }
+
+  /* ---- Celular (hasta 720 px): una sola columna ---- */
+  @media (max-width: 720px) {
+    div[style*="max-width:1100px"], div[style*="max-width:1100px"] * { box-sizing: border-box; }
+    div[style*="max-width:1100px"] { margin: 12px auto !important; padding: 0 12px !important; }
+    div[style*="max-width:1100px"] img { max-width: 100%; }
+    div[style*="max-width:1100px"] a, div[style*="max-width:1100px"] p { overflow-wrap: break-word; }
+    div[id^="qomp-"] { gap: 16px !important; }
+
+    /* El menú deja de ser barra lateral: pasa arriba, a todo el ancho,
+       con los enlaces convertidos en fichas que fluyen en varias filas. */
+    div[style*="flex:0 0 240px"] {
+      flex: 1 1 100% !important;
+      width: 100% !important;
+      position: static !important;
+      top: auto !important;
+      padding: 14px !important;
+      text-align: center;
+    }
+    div[style*="flex:0 0 240px"] > img { width: 60px !important; margin: 0 auto 6px !important; }
+    div[style*="flex:0 0 240px"] > h3 { font-size: 1em !important; }
+    div[style*="flex:0 0 240px"] > p { display: inline-block !important; margin: 0 5px 6px 0 !important; }
+    div[style*="flex:0 0 240px"] > p > a { padding: 9px 13px !important; font-size: 0.85em !important; }
+
+    /* Columna de contenido a todo el ancho disponible */
+    div[style*="flex:1 1 500px"] {
+      flex: 1 1 100% !important;
+      width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    /* Fichas de investigadores: que llenen el ancho en vez de quedar a 260 px */
+    div[style*="max-width:260px"] { max-width: none !important; }
+
+    /* Titulares algo más compactos en pantalla pequeña */
+    div[style*="max-width:1100px"] h2 { font-size: 1.25em !important; }
+    div[style*="max-width:1100px"] h3 { font-size: 1.05em !important; }
+  }
 </style>
 
 <div style="max-width:1100px; margin:20px auto;">
@@ -181,6 +231,11 @@
         <p style="margin:0; font-size:0.85em;"><a href="mailto:oliverlira2002@gmail.com" style="color:#1f4d3f;">oliverlira2002@gmail.com</a></p>
       </div>
       <div style="flex:1 1 240px; background:#ffffff; border:1px solid #e3e7e5; border-radius:10px; padding:16px;">
+        <p style="margin:0 0 2px; font-weight:700; color:#1f2937;">Carlos Batista</p>
+        <p style="margin:0 0 6px; color:#1f4d3f; font-size:0.88em; font-weight:600;">Estudiante de Licenciatura en Física</p>
+        <p style="margin:0; color:#666; font-size:0.85em;">Control de la helicidad de armónicos de alto orden con pulsos ortogonales retardados</p>
+      </div>
+      <div style="flex:1 1 240px; background:#ffffff; border:1px solid #e3e7e5; border-radius:10px; padding:16px;">
         <p style="margin:0 0 2px; font-weight:700; color:#1f2937;">Daniela Vargas</p>
         <p style="margin:0 0 6px; color:#1f4d3f; font-size:0.88em; font-weight:600;">Graduada · Lic. en Física</p>
         <p style="margin:0; color:#666; font-size:0.85em;">Generación de armónicos de alto orden en el semimetal de Weyl TaAs</p>
@@ -189,11 +244,6 @@
         <p style="margin:0 0 2px; font-weight:700; color:#1f2937;">Bryan Lorenzo</p>
         <p style="margin:0 0 6px; color:#1f4d3f; font-size:0.88em; font-weight:600;">Graduado · Lic. en Física</p>
         <p style="margin:0; color:#666; font-size:0.85em;">Espectroscopía de armónicos de alto orden en materiales Kagome topológicos</p>
-      </div>
-      <div style="flex:1 1 240px; background:#ffffff; border:1px solid #e3e7e5; border-radius:10px; padding:16px;">
-        <p style="margin:0 0 2px; font-weight:700; color:#1f2937;">Carlos Batista</p>
-        <p style="margin:0 0 6px; color:#1f4d3f; font-size:0.88em; font-weight:600;">Graduado · Lic. en Física</p>
-        <p style="margin:0; color:#666; font-size:0.85em;">Control de la helicidad de armónicos de alto orden con pulsos ortogonales retardados</p>
       </div>
     </div>
     </div>
@@ -236,9 +286,9 @@
 
     <h3 style="margin:0 0 14px; padding-bottom:6px; border-bottom:2px solid #c9a227; color:#1f2937;">Preprints (en evaluación)</h3>
 
-    <p style="margin:0 0 14px; line-height:1.55; color:#444;"><a href="https://arxiv.org/abs/2604.27750" target="_blank" rel="noopener" style="color:#1f4d3f; font-weight:600;">Field-driven helicity in solid-state high-harmonic generation</a><br>C. Batista, J. P. Menotti, D. Kim, B. K. Das, W. Gao, <strong>A. Chacón</strong>, C. Granados<br><em>arXiv:2604.27750 — enviado a Physical Review Letters. Depositado el 30 abr 2026.</em></p>
+    <p style="margin:0 0 14px; line-height:1.55; color:#444;"><a href="https://arxiv.org/abs/2604.27750" target="_blank" rel="noopener" style="color:#1f4d3f; font-weight:600;">Field-driven helicity in solid-state high-harmonic generation</a><br><strong>C. Batista</strong>, <strong>J. P. Menotti</strong>, D. Kim, B. K. Das, W. Gao, <strong>A. Chacón</strong>, C. Granados<br><em>arXiv:2604.27750 — enviado a Physical Review Letters. Depositado el 30 abr 2026.</em></p>
     <p style="margin:0 0 14px; line-height:1.55; color:#444;"><a href="https://arxiv.org/abs/2605.28236" target="_blank" rel="noopener" style="color:#1f4d3f; font-weight:600;">Symmetry breaking by quantum light in solid-state high-harmonic generation</a><br>P. Stammer, J. Rivera-Dean, D. Kim, <strong>A. Chacón</strong>, W. Gao, C. Granados<br><em>arXiv:2605.28236. Depositado el 27 may 2026.</em></p>
-    <p style="margin:0 0 24px; line-height:1.55; color:#444;"><a href="https://arxiv.org/abs/2508.15631" target="_blank" rel="noopener" style="color:#1f4d3f; font-weight:600;">High Harmonic Spectroscopy from Lower-Order to Higher-Order Topological Insulators</a><br>B. Lorenzo, C. Batista, M. Jangjan, D. Kim, J. Menotti, F. Liu, W. Gao, S. Ghimire, C. Granados, <strong>A. Chacón</strong><br><em>arXiv:2508.15631 — enviado a Physical Review B. Depositado el 21 ago 2025.</em></p>
+    <p style="margin:0 0 24px; line-height:1.55; color:#444;"><a href="https://arxiv.org/abs/2508.15631" target="_blank" rel="noopener" style="color:#1f4d3f; font-weight:600;">High Harmonic Spectroscopy from Lower-Order to Higher-Order Topological Insulators</a><br><strong>B. Lorenzo</strong>, <strong>C. Batista</strong>, M. Jangjan, D. Kim, <strong>J. Menotti</strong>, F. Liu, W. Gao, S. Ghimire, C. Granados, <strong>A. Chacón</strong><br><em>arXiv:2508.15631 — enviado a Physical Review B. Depositado el 21 ago 2025.</em></p>
 
     <h3 style="margin:0 0 14px; padding-bottom:6px; border-bottom:2px solid #c9a227; color:#1f2937;">Artículos</h3>
 
@@ -430,21 +480,24 @@
       Formamos a la próxima generación de físicas y físicos de Panamá en la teoría cuántica de la interacción luz–materia.
     </p>
 
-    <h3 style="margin:0 0 14px; padding-bottom:6px; border-bottom:2px solid #c9a227; color:#1f2937;">Docencia</h3>
-    <p style="margin:0 0 22px; color:#444; line-height:1.7;">
-      En la Universidad de Panamá el grupo imparte los cursos de <strong>Física Nuclear</strong>,
-      <strong>Física Moderna Experimental</strong> y <strong>Mecánica Cuántica A y B</strong> (desde 2024).
-    </p>
-
-    <h3 style="margin:0 0 14px; padding-bottom:6px; border-bottom:2px solid #c9a227; color:#1f2937;">Tesis de licenciatura</h3>
+    <h3 style="margin:0 0 14px; padding-bottom:6px; border-bottom:2px solid #c9a227; color:#1f2937;">Estudiantes formados en el grupo</h3>
+    <p style="color:#444; line-height:1.7; margin-bottom:16px;">Tesis sustentadas y aprobadas bajo la dirección del grupo.</p>
     <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:22px;">
-      <div style="flex:1 1 260px; background:#ffffff; border:1px solid #e3e7e5; border-radius:10px; padding:18px;">
-        <h3 style="margin:0 0 8px; color:#1f4d3f;">En curso</h3>
-        <p style="margin:0; color:#555; line-height:1.7;">Control de la helicidad en armónicos de alto orden · Espectroscopía de armónicos en semimetales multi-Weyl · Nuevos temas en materiales cuánticos.</p>
+      <div style="flex:1 1 260px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/tesis-bryan-lorenzo.jpg" alt="Bryan Lorenzo durante la sustentación de su tesis" style="width:100%; height:190px; object-fit:cover; display:block;">
+        <div style="padding:16px;">
+          <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">2 de julio de 2026 &middot; Licenciatura en Física</p>
+          <p style="margin:0 0 6px; font-weight:700; color:#1f2937;">Bryan Lorenzo</p>
+          <p style="margin:0; color:#555; line-height:1.6;">Espectroscopía de armónicos de alto orden en materiales Kagome topológicos.</p>
+        </div>
       </div>
-      <div style="flex:1 1 260px; background:#ffffff; border:1px solid #e3e7e5; border-radius:10px; padding:18px;">
-        <h3 style="margin:0 0 8px; color:#1f4d3f;">Concluidas (2025)</h3>
-        <p style="margin:0; color:#555; line-height:1.7;">Generación de armónicos en el semimetal de Weyl TaAs · Espectroscopía de armónicos en materiales Kagome topológicos · Control de la helicidad con pulsos ortogonales retardados.</p>
+      <div style="flex:1 1 260px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <div style="height:190px; background:linear-gradient(135deg,#1f4d3f,#38d0e6); display:grid; place-items:center; font-size:2.4em;">🎓</div>
+        <div style="padding:16px;">
+          <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">19 de julio de 2026 &middot; Licenciatura en Física</p>
+          <p style="margin:0 0 6px; font-weight:700; color:#1f2937;">Daniela Vargas</p>
+          <p style="margin:0; color:#555; line-height:1.6;">Generación de armónicos de alto orden en el semimetal de Weyl TaAs.</p>
+        </div>
       </div>
     </div>
 
@@ -496,15 +549,15 @@
     </div>
     <div style="background:#ffffff; border:1px solid #e3e7e5; border-left:4px solid #c9a227; border-radius:10px; padding:18px; margin-bottom:14px;">
       <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">Abril 2026</p>
-      <p style="margin:0; color:#444; line-height:1.6;">Enviado a <em>Physical Review Letters</em> el trabajo sobre helicidad controlada por campo en la generación de armónicos, con los egresados Carlos Batista y Jean Paul Menotti como primeros autores (arXiv:2604.27750).</p>
+      <p style="margin:0; color:#444; line-height:1.6;">Enviado a <em>Physical Review Letters</em> el trabajo sobre helicidad controlada por campo en la generación de armónicos, con los estudiantes Carlos Batista y Jean Paul Menotti como primeros autores (arXiv:2604.27750).</p>
     </div>
     <div style="background:#ffffff; border:1px solid #e3e7e5; border-left:4px solid #c9a227; border-radius:10px; padding:18px; margin-bottom:14px;">
       <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">Noviembre 2025</p>
       <p style="margin:0; color:#444; line-height:1.6;">Publicado en <em>Nature Communications</em> el estudio de interferencia cuántica y control de ocupación en la generación de armónicos en monocapa de WS₂, con participación del grupo.</p>
     </div>
     <div style="background:#ffffff; border:1px solid #e3e7e5; border-left:4px solid #c9a227; border-radius:10px; padding:18px; margin-bottom:14px;">
-      <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">2025</p>
-      <p style="margin:0; color:#444; line-height:1.6;">Daniela Vargas, Bryan Lorenzo y Carlos Batista presentaron sus tesis de licenciatura desarrolladas en el grupo. ¡Felicidades!</p>
+      <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">Julio 2026</p>
+      <p style="margin:0; color:#444; line-height:1.6;">Bryan Lorenzo (2 de julio) y Daniela Vargas (19 de julio) sustentaron sus tesis de licenciatura desarrolladas en el grupo. ¡Felicidades!</p>
     </div>
     <div style="background:#ffffff; border:1px solid #e3e7e5; border-left:4px solid #c9a227; border-radius:10px; padding:18px; margin-bottom:14px;">
       <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">Octubre 2025</p>
@@ -612,6 +665,30 @@
       <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
         <img src="https://qompup-cmd.github.io/QOMP/assets/img/up-entrada.jpg" alt="Entrada de la Universidad de Panamá" style="width:100%; height:230px; object-fit:cover; display:block;">
         <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Entrada de la Universidad de Panamá, Ciudad Universitaria.</p>
+      </div>
+      <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/facinet-up.jpg" alt="Facultad de Ciencias Naturales, Exactas y Tecnología" style="width:100%; height:230px; object-fit:cover; display:block;">
+        <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Facultad de Ciencias Naturales, Exactas y Tecnología (FACINET), donde trabaja el grupo.</p>
+      </div>
+      <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/miembros-qomp.jpg" alt="Integrantes del grupo QOMP" style="width:100%; height:230px; object-fit:cover; display:block;">
+        <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Integrantes del grupo QOMP en la Universidad de Panamá.</p>
+      </div>
+      <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/zona-trabajo-qomp.jpg" alt="Zona de trabajo del grupo QOMP" style="width:100%; height:230px; object-fit:cover; display:block;">
+        <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Zona de trabajo del grupo: pizarra, cálculo y discusión.</p>
+      </div>
+      <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/tesis-bryan-lorenzo.jpg" alt="Bryan Lorenzo sustentando su tesis" style="width:100%; height:230px; object-fit:cover; display:block;">
+        <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Bryan Lorenzo sustenta su tesis de licenciatura (2 de julio de 2026).</p>
+      </div>
+      <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/tesis-bryan-chacon.jpg" alt="Bryan Lorenzo con el Prof. Dr. Alexis Chacón" style="width:100%; height:230px; object-fit:cover; display:block;">
+        <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Bryan Lorenzo con el Prof. Dr. Alexis Chacón tras la sustentación.</p>
+      </div>
+      <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/presentacion-tesis-qomp.jpg" alt="Presentación de resultados del grupo" style="width:100%; height:230px; object-fit:cover; display:block;">
+        <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Presentación de resultados sobre transiciones de fase topológicas.</p>
       </div>
       <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
         <img src="https://qompup-cmd.github.io/QOMP/assets/img/logo-qomp.png" alt="Logo del grupo QOMP" style="width:100%; height:230px; object-fit:contain; display:block; background:#f7f8f8; padding:20px; box-sizing:border-box;">
@@ -853,6 +930,11 @@
         <p style="margin:0; font-size:0.85em;"><a href="mailto:oliverlira2002@gmail.com" style="color:#1f4d3f;">oliverlira2002@gmail.com</a></p>
       </div>
       <div style="flex:1 1 240px; background:#ffffff; border:1px solid #e3e7e5; border-radius:10px; padding:16px;">
+        <p style="margin:0 0 2px; font-weight:700; color:#1f2937;">Carlos Batista</p>
+        <p style="margin:0 0 6px; color:#1f4d3f; font-size:0.88em; font-weight:600;">B.Sc. student in Physics</p>
+        <p style="margin:0; color:#666; font-size:0.85em;">Controlling the helicity of high-order harmonics with delayed orthogonal pulses</p>
+      </div>
+      <div style="flex:1 1 240px; background:#ffffff; border:1px solid #e3e7e5; border-radius:10px; padding:16px;">
         <p style="margin:0 0 2px; font-weight:700; color:#1f2937;">Daniela Vargas</p>
         <p style="margin:0 0 6px; color:#1f4d3f; font-size:0.88em; font-weight:600;">Graduate · B.Sc. in Physics</p>
         <p style="margin:0; color:#666; font-size:0.85em;">High-order harmonic generation in the Weyl semimetal TaAs</p>
@@ -861,11 +943,6 @@
         <p style="margin:0 0 2px; font-weight:700; color:#1f2937;">Bryan Lorenzo</p>
         <p style="margin:0 0 6px; color:#1f4d3f; font-size:0.88em; font-weight:600;">Graduate · B.Sc. in Physics</p>
         <p style="margin:0; color:#666; font-size:0.85em;">High-order harmonic spectroscopy of topological Kagome materials</p>
-      </div>
-      <div style="flex:1 1 240px; background:#ffffff; border:1px solid #e3e7e5; border-radius:10px; padding:16px;">
-        <p style="margin:0 0 2px; font-weight:700; color:#1f2937;">Carlos Batista</p>
-        <p style="margin:0 0 6px; color:#1f4d3f; font-size:0.88em; font-weight:600;">Graduate · B.Sc. in Physics</p>
-        <p style="margin:0; color:#666; font-size:0.85em;">Controlling the helicity of high-order harmonics with delayed orthogonal pulses</p>
       </div>
     </div>
     </div>
@@ -908,9 +985,9 @@
 
     <h3 style="margin:0 0 14px; padding-bottom:6px; border-bottom:2px solid #c9a227; color:#1f2937;">Preprints (under review)</h3>
 
-    <p style="margin:0 0 14px; line-height:1.55; color:#444;"><a href="https://arxiv.org/abs/2604.27750" target="_blank" rel="noopener" style="color:#1f4d3f; font-weight:600;">Field-driven helicity in solid-state high-harmonic generation</a><br>C. Batista, J. P. Menotti, D. Kim, B. K. Das, W. Gao, <strong>A. Chacón</strong>, C. Granados<br><em>arXiv:2604.27750 — submitted to Physical Review Letters. Deposited on 30 Apr 2026.</em></p>
+    <p style="margin:0 0 14px; line-height:1.55; color:#444;"><a href="https://arxiv.org/abs/2604.27750" target="_blank" rel="noopener" style="color:#1f4d3f; font-weight:600;">Field-driven helicity in solid-state high-harmonic generation</a><br><strong>C. Batista</strong>, <strong>J. P. Menotti</strong>, D. Kim, B. K. Das, W. Gao, <strong>A. Chacón</strong>, C. Granados<br><em>arXiv:2604.27750 — submitted to Physical Review Letters. Deposited on 30 Apr 2026.</em></p>
     <p style="margin:0 0 14px; line-height:1.55; color:#444;"><a href="https://arxiv.org/abs/2605.28236" target="_blank" rel="noopener" style="color:#1f4d3f; font-weight:600;">Symmetry breaking by quantum light in solid-state high-harmonic generation</a><br>P. Stammer, J. Rivera-Dean, D. Kim, <strong>A. Chacón</strong>, W. Gao, C. Granados<br><em>arXiv:2605.28236. Deposited on 27 May 2026.</em></p>
-    <p style="margin:0 0 24px; line-height:1.55; color:#444;"><a href="https://arxiv.org/abs/2508.15631" target="_blank" rel="noopener" style="color:#1f4d3f; font-weight:600;">High Harmonic Spectroscopy from Lower-Order to Higher-Order Topological Insulators</a><br>B. Lorenzo, C. Batista, M. Jangjan, D. Kim, J. Menotti, F. Liu, W. Gao, S. Ghimire, C. Granados, <strong>A. Chacón</strong><br><em>arXiv:2508.15631 — submitted to Physical Review B. Deposited on 21 Aug 2025.</em></p>
+    <p style="margin:0 0 24px; line-height:1.55; color:#444;"><a href="https://arxiv.org/abs/2508.15631" target="_blank" rel="noopener" style="color:#1f4d3f; font-weight:600;">High Harmonic Spectroscopy from Lower-Order to Higher-Order Topological Insulators</a><br><strong>B. Lorenzo</strong>, <strong>C. Batista</strong>, M. Jangjan, D. Kim, <strong>J. Menotti</strong>, F. Liu, W. Gao, S. Ghimire, C. Granados, <strong>A. Chacón</strong><br><em>arXiv:2508.15631 — submitted to Physical Review B. Deposited on 21 Aug 2025.</em></p>
 
     <h3 style="margin:0 0 14px; padding-bottom:6px; border-bottom:2px solid #c9a227; color:#1f2937;">Articles</h3>
 
@@ -1102,21 +1179,24 @@
       We train Panama's next generation of physicists in the quantum theory of light–matter interaction.
     </p>
 
-    <h3 style="margin:0 0 14px; padding-bottom:6px; border-bottom:2px solid #c9a227; color:#1f2937;">Teaching</h3>
-    <p style="margin:0 0 22px; color:#444; line-height:1.7;">
-      At the University of Panama the group teaches <strong>Nuclear Physics</strong>,
-      <strong>Experimental Modern Physics</strong> and <strong>Quantum Mechanics A and B</strong> (since 2024).
-    </p>
-
-    <h3 style="margin:0 0 14px; padding-bottom:6px; border-bottom:2px solid #c9a227; color:#1f2937;">B.Sc. theses</h3>
+    <h3 style="margin:0 0 14px; padding-bottom:6px; border-bottom:2px solid #c9a227; color:#1f2937;">Students trained in the group</h3>
+    <p style="color:#444; line-height:1.7; margin-bottom:16px;">Theses defended and approved under the group&rsquo;s supervision.</p>
     <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:22px;">
-      <div style="flex:1 1 260px; background:#ffffff; border:1px solid #e3e7e5; border-radius:10px; padding:18px;">
-        <h3 style="margin:0 0 8px; color:#1f4d3f;">Ongoing</h3>
-        <p style="margin:0; color:#555; line-height:1.7;">Helicity control in high-order harmonics · High-harmonic spectroscopy of multi-Weyl semimetals · New topics in quantum materials.</p>
+      <div style="flex:1 1 260px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/tesis-bryan-lorenzo.jpg" alt="Bryan Lorenzo defending his B.Sc. thesis" style="width:100%; height:190px; object-fit:cover; display:block;">
+        <div style="padding:16px;">
+          <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">2 July 2026 &middot; B.Sc. in Physics</p>
+          <p style="margin:0 0 6px; font-weight:700; color:#1f2937;">Bryan Lorenzo</p>
+          <p style="margin:0; color:#555; line-height:1.6;">High-order harmonic spectroscopy of topological Kagome materials.</p>
+        </div>
       </div>
-      <div style="flex:1 1 260px; background:#ffffff; border:1px solid #e3e7e5; border-radius:10px; padding:18px;">
-        <h3 style="margin:0 0 8px; color:#1f4d3f;">Completed (2025)</h3>
-        <p style="margin:0; color:#555; line-height:1.7;">Harmonic generation in the Weyl semimetal TaAs · High-harmonic spectroscopy of topological Kagome materials · Helicity control with delayed orthogonal pulses.</p>
+      <div style="flex:1 1 260px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <div style="height:190px; background:linear-gradient(135deg,#1f4d3f,#38d0e6); display:grid; place-items:center; font-size:2.4em;">🎓</div>
+        <div style="padding:16px;">
+          <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">19 July 2026 &middot; B.Sc. in Physics</p>
+          <p style="margin:0 0 6px; font-weight:700; color:#1f2937;">Daniela Vargas</p>
+          <p style="margin:0; color:#555; line-height:1.6;">High-order harmonic generation in the Weyl semimetal TaAs.</p>
+        </div>
       </div>
     </div>
 
@@ -1164,15 +1244,15 @@
     </div>
     <div style="background:#ffffff; border:1px solid #e3e7e5; border-left:4px solid #c9a227; border-radius:10px; padding:18px; margin-bottom:14px;">
       <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">April 2026</p>
-      <p style="margin:0; color:#444; line-height:1.6;">Submitted to <em>Physical Review Letters</em>: field-driven helicity in high-harmonic generation, with group alumni Carlos Batista and Jean Paul Menotti as first authors (arXiv:2604.27750).</p>
+      <p style="margin:0; color:#444; line-height:1.6;">Submitted to <em>Physical Review Letters</em>: field-driven helicity in high-harmonic generation, with group students Carlos Batista and Jean Paul Menotti as first authors (arXiv:2604.27750).</p>
     </div>
     <div style="background:#ffffff; border:1px solid #e3e7e5; border-left:4px solid #c9a227; border-radius:10px; padding:18px; margin-bottom:14px;">
       <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">November 2025</p>
       <p style="margin:0; color:#444; line-height:1.6;">Published in <em>Nature Communications</em>: quantum interference and occupation control in high-harmonic generation from monolayer WS₂, with participation of the group.</p>
     </div>
     <div style="background:#ffffff; border:1px solid #e3e7e5; border-left:4px solid #c9a227; border-radius:10px; padding:18px; margin-bottom:14px;">
-      <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">2025</p>
-      <p style="margin:0; color:#444; line-height:1.6;">Daniela Vargas, Bryan Lorenzo and Carlos Batista defended their B.Sc. theses developed within the group. Congratulations!</p>
+      <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">July 2026</p>
+      <p style="margin:0; color:#444; line-height:1.6;">Bryan Lorenzo (2 July) and Daniela Vargas (19 July) defended their B.Sc. theses developed within the group. Congratulations!</p>
     </div>
     <div style="background:#ffffff; border:1px solid #e3e7e5; border-left:4px solid #c9a227; border-radius:10px; padding:18px; margin-bottom:14px;">
       <p style="margin:0 0 4px; color:#1f4d3f; font-weight:700; font-size:0.85em;">October 2025</p>
@@ -1282,6 +1362,30 @@
         <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Entrance of the University of Panama, Ciudad Universitaria.</p>
       </div>
       <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/facinet-up.jpg" alt="Faculty of Natural, Exact Sciences and Technology" style="width:100%; height:230px; object-fit:cover; display:block;">
+        <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Faculty of Natural, Exact Sciences and Technology (FACINET), home of the group.</p>
+      </div>
+      <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/miembros-qomp.jpg" alt="Members of the QOMP group" style="width:100%; height:230px; object-fit:cover; display:block;">
+        <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Members of the QOMP group at the University of Panama.</p>
+      </div>
+      <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/zona-trabajo-qomp.jpg" alt="QOMP working area" style="width:100%; height:230px; object-fit:cover; display:block;">
+        <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">The group working area: blackboard, computing and discussion.</p>
+      </div>
+      <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/tesis-bryan-lorenzo.jpg" alt="Bryan Lorenzo defending his thesis" style="width:100%; height:230px; object-fit:cover; display:block;">
+        <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Bryan Lorenzo defends his B.Sc. thesis (2 July 2026).</p>
+      </div>
+      <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/tesis-bryan-chacon.jpg" alt="Bryan Lorenzo with Prof. Dr. Alexis Chacón" style="width:100%; height:230px; object-fit:cover; display:block;">
+        <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Bryan Lorenzo with Prof. Dr. Alexis Chacón after the defence.</p>
+      </div>
+      <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
+        <img src="https://qompup-cmd.github.io/QOMP/assets/img/presentacion-tesis-qomp.jpg" alt="Group results presentation" style="width:100%; height:230px; object-fit:cover; display:block;">
+        <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Presentation of results on topological phase transitions.</p>
+      </div>
+      <div style="flex:1 1 300px; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; overflow:hidden;">
         <img src="https://qompup-cmd.github.io/QOMP/assets/img/logo-qomp.png" alt="QOMP group logo" style="width:100%; height:230px; object-fit:contain; display:block; background:#f7f8f8; padding:20px; box-sizing:border-box;">
         <p style="margin:0; padding:12px 14px; color:#555; font-size:0.9em;">Logo of the Quantum Optics and Condensed Matter Physics group.</p>
       </div>
@@ -1378,14 +1482,10 @@
 
     <h2 style="margin:0 0 14px; color:#1f2937;">Quantum optics and condensed matter physics group (QOMP)</h2>
     <p style="color:#444; line-height:1.7;">
-      Welcome to the QOMP group, led by Prof. Dr. Alexis Chacón at the University of Panama.
-      We explore microscopic physics from gas- to solid-state phases:
-      attosecond science applied to condensed matter physics.
-    </p>
-    <p style="color:#444; line-height:1.7;">
-      We are a small group, yet highly motivated to tackle ambitious projects in the physics of the
-      microscopic world: quantum physics applied to optical phenomena and to condensed matter,
-      from solids to semiconductors.
+      Welcome to QOMP, a research group led by Prof. Dr. Alexis Chacón at the University of
+      Panama. We explore the ultrafast quantum dynamics of matter, from atoms and molecules to
+      semiconductors and quantum materials, using the tools of attosecond physics, quantum
+      optics and condensed matter.
     </p>
 
     <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; padding:20px; margin:22px 0;">
@@ -1455,14 +1555,10 @@
 
     <h2 style="margin:0 0 14px; color:#1f2937;">Quantum optics and condensed matter physics group (QOMP)</h2>
     <p style="color:#444; line-height:1.7;">
-      Bienvenido al grupo QOMP, dirigido por el Prof. Dr. Alexis Chacón en la Universidad de Panamá.
-      Exploramos la física microscópica desde la fase gaseosa hasta el estado sólido:
-      la ciencia de attosegundos aplicada a la física de la materia condensada.
-    </p>
-    <p style="color:#444; line-height:1.7;">
-      Somos un grupo pequeño, pero altamente motivado a abordar proyectos ambiciosos en la física del mundo
-      microscópico: la física cuántica aplicada a los fenómenos ópticos y a la materia condensada, de los
-      sólidos a los semiconductores.
+      Bienvenido a QOMP, grupo de investigación dirigido por el Prof. Dr. Alexis Chacón en la
+      Universidad de Panamá. Exploramos la dinámica cuántica ultrarrápida de la materia, desde
+      átomos y moléculas hasta semiconductores y materiales cuánticos, utilizando herramientas de
+      la física de attosegundos, la óptica cuántica y la materia condensada.
     </p>
 
     <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center; background:#ffffff; border:1px solid #e3e7e5; border-radius:12px; padding:20px; margin:22px 0;">
