@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=14">
+  <link rel="stylesheet" href="assets/css/styles.css?v=15">
   <script>if (window.self !== window.top) { document.documentElement.classList.add("embebido"); }</script>
 </head>
 <body>
@@ -43,8 +43,8 @@
     <div class="contenedor hero__inner">
       <span class="hero__badge"><span class="punto"></span> <span data-i18n="hero.badge">Materia condensada · Materiales cuánticos</span></span>
       <h1 data-i18n="hero.h1">De los attosegundos a la materia cuántica: explorando la física ultrarrápida de la materia condensada</h1>
-      <p class="hero__pregunta" data-i18n="hero.pregunta">¿Cómo se comporta la materia y cómo podemos controlarla en escalas de tiempo ultrarrápidas, desde femtosegundos (10⁻¹⁵ s) hasta attosegundos (10⁻¹⁸ s)?</p>
-      <p data-i18n="hero.p">Bienvenidos a <strong>QOMP</strong>, grupo dirigido por el Prof. Dr. Alexis Chacón en la Universidad de Panamá. Investigamos teóricamente la <strong>dinámica ultrarrápida y la espectroscopía de la materia</strong>, tanto en fase gaseosa como en estado sólido, mediante herramientas y conceptos de la <strong>física de attosegundos, la óptica cuántica y la física de la materia condensada</strong>.</p>
+      <p data-i18n="hero.p" style="margin-bottom:14px;"><strong>QOMP — Quantum Optics and Condensed Matter Physics</strong> es un grupo de investigación dirigido por el <strong>Prof. Dr. Alexis Chacón</strong> en la Universidad de Panamá.</p>
+      <p data-i18n="hero.p2">Nuestro trabajo se centra en el estudio teórico de la <strong>dinámica ultrarrápida y la espectroscopía de la materia</strong>, tanto en fase gaseosa como en estado sólido, combinando conceptos y herramientas de la <strong>física de attosegundos, la óptica cuántica y la física de la materia condensada</strong>.</p>
       <div class="hero__acciones">
         <a class="btn btn--primario" href="lineas.html" data-i18n="hero.btn1">Ver líneas de investigación</a>
         <a class="btn btn--fantasma" href="contacto.html" data-i18n="hero.btn2">Únete al grupo</a>
@@ -62,12 +62,36 @@
           <figcaption>Prof. Dr. Alexis Chacón<span class="director__cargo" data-i18n="director.cargo">Director del grupo QOMP · Universidad de Panamá</span></figcaption>
         </figure>
         <div class="reveal">
-          <span class="eyebrow" data-i18n="director.eyebrow">Dirección del grupo</span>
-          <h2 class="seccion__titulo" style="font-size:clamp(1.45rem, 2.6vw, 2rem);" data-i18n="director.titulo">Bienvenido al sitio del grupo Quantum Optics and Condensed Matter Physics, dirigido por el Prof. Dr. Alexis Chacón</h2>
-          <p class="seccion__intro" style="max-width:none;" data-i18n="director.p1">Nuestra motivación se centra en comprender y controlar la <strong>dinámica de electrones y huecos</strong> mediante la interacción de pulsos láser ultracortos con la materia, desde el régimen de los THz hasta frecuencias ópticas, así como en explorar las propiedades de la <strong>estructura electrónica</strong> de semiconductores y materiales cuánticos, incluyendo <strong>aislantes topológicos, materiales bidimensionales y dicalcogenuros de metales de transición (TMDs)</strong>.</p>
-          <p style="color:var(--gris-700);" data-i18n="director.p2">Nuestra investigación abarca la dinámica ultrarrápida de electrones en átomos, moléculas y sólidos; la generación de armónicos de alto orden como herramienta espectroscópica de la estructura electrónica; y el estudio de semiconductores y materiales cuánticos —aislantes topológicos, semimetales de Dirac y de Weyl, dicalcogenuros de metales de transición y redes Kagome—, combinando teoría analítica con simulación computacional de alto rendimiento.</p>
+          <span class="eyebrow" data-i18n="director.eyebrow">Nuestra ciencia</span>
+          <h2 class="seccion__titulo" style="font-size:clamp(1.45rem, 2.6vw, 2rem);" data-i18n="director.titulo">¿Qué queremos comprender?</h2>
+          <p class="seccion__intro" style="max-width:none;" data-i18n="director.p1">Nuestro objetivo científico es comprender y controlar la <strong>dinámica de electrones y huecos</strong> cuando la materia interactúa con pulsos láser ultracortos, desde el régimen de los terahercios (THz) hasta frecuencias ópticas.</p>
+          <p style="color:var(--gris-700);" data-i18n="director.p2">Estudiamos cómo estas interacciones permiten acceder a las propiedades de la <strong>estructura electrónica y la geometría cuántica</strong> de semiconductores y materiales cuánticos, incluyendo <strong>aislantes topológicos, semimetales de Weyl, materiales bidimensionales y dicalcogenuros de metales de transición (TMDs)</strong>.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ======================= PREGUNTAS QUE NOS MOTIVAN ======================= -->
+  <section class="seccion seccion--alt" id="preguntas">
+    <div class="contenedor">
+      <div class="centro">
+        <span class="eyebrow" data-i18n="preg.eyebrow">Identidad científica</span>
+        <h2 class="seccion__titulo" data-i18n="preg.titulo">Las preguntas que nos motivan</h2>
+      </div>
+      <div class="preguntas">
+        <p class="pregunta reveal" data-i18n="preg.q1">¿Cómo se comporta la materia y cómo podemos controlarla en escalas de tiempo ultrarrápidas, desde femtosegundos (10⁻¹⁵ s) hasta attosegundos (10⁻¹⁸ s)?</p>
+        <p class="pregunta reveal" data-i18n="preg.q2">¿Podemos utilizar pulsos de luz ultracortos para observar, controlar y reconstruir las propiedades electrónicas y topológicas de los materiales cuánticos?</p>
+      </div>
+      <ul class="cadena reveal">
+        <li data-i18n="preg.c1">Luz ultrarrápida</li>
+        <li class="cadena__flecha" aria-hidden="true">→</li>
+        <li data-i18n="preg.c2">Dinámica electrónica</li>
+        <li class="cadena__flecha" aria-hidden="true">→</li>
+        <li data-i18n="preg.c3">Respuesta óptica</li>
+        <li class="cadena__flecha" aria-hidden="true">→</li>
+        <li data-i18n="preg.c4">Estructura electrónica y topología</li>
+      </ul>
+      <p class="pregunta pregunta--final reveal" data-i18n="preg.final">¿Puede la luz ultrarrápida revelar y controlar la topología de la materia cuántica?</p>
     </div>
   </section>
 
@@ -206,6 +230,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=17"></script>
+  <script src="assets/js/main.js?v=18"></script>
 </body>
 </html>
