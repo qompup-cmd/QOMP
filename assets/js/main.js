@@ -144,16 +144,27 @@
       // Hero
       "hero.badge": "Condensed matter · Quantum materials",
       "hero.h1": "From attoseconds to quantum matter: exploring the ultrafast physics of condensed matter",
-      "hero.p": "Welcome to QOMP, a research group led by Prof. Dr. Alexis Chacón at the University of Panama. We explore the ultrafast quantum dynamics of matter, from atoms and molecules to semiconductors and quantum materials, using the tools of attosecond physics, quantum optics and condensed matter.",
+      "hero.p": "<strong>QOMP — Quantum Optics and Condensed Matter Physics</strong> is a research group led by <strong>Prof. Dr. Alexis Chacón</strong> at the University of Panama.",
+      "hero.p2": "Our work focuses on the theoretical study of the <strong>ultrafast dynamics and spectroscopy of matter</strong>, in both the gas phase and the solid state, combining concepts and tools from <strong>attosecond physics, quantum optics and condensed matter physics</strong>.",
       "hero.btn1": "View research lines",
       "hero.btn2": "Join the group",
       "hero.legend": "University of Panama",
       // Director del grupo
-      "director.eyebrow": "Group leadership",
-      "director.titulo": "Welcome to the website of the Quantum Optics and Condensed Matter Physics group, led by Prof. Dr. Alexis Chacón",
-      "director.p1": "From the University of Panama we work on a wide range of topics in theoretical physics: from quantum optics and the interaction of matter with ultra-intense, ultra-short laser pulses — attosecond physics — to condensed matter and solid-state physics.",
-      "director.p2": "Our research spans the ultrafast dynamics of electrons in atoms, molecules and solids; high-order harmonic generation as a spectroscopic probe of electronic structure; and the study of semiconductors and quantum materials — topological insulators, Dirac and Weyl semimetals, transition-metal dichalcogenides and Kagome lattices — combining analytical theory with high-performance computational simulation.",
+      "director.eyebrow": "Our science",
+      "director.titulo": "What we want to understand",
+      "director.p1": "Our scientific goal is to understand and control the <strong>dynamics of electrons and holes</strong> when matter interacts with ultrashort laser pulses, from the terahertz (THz) regime to optical frequencies.",
+      "director.p2": "We study how these interactions give access to the <strong>electronic structure and quantum geometry</strong> of semiconductors and quantum materials, including <strong>topological insulators, Weyl semimetals, two-dimensional materials and transition-metal dichalcogenides (TMDs)</strong>.",
       "director.cargo": "QOMP group leader · University of Panama",
+      // Preguntas que nos motivan
+      "preg.eyebrow": "Scientific identity",
+      "preg.titulo": "The questions that drive us",
+      "preg.q1": "How does matter behave, and how can we control it on ultrafast timescales, from femtoseconds (10⁻¹⁵ s) to attoseconds (10⁻¹⁸ s)?",
+      "preg.q2": "Can we use ultrashort light pulses to observe, control and reconstruct the electronic and topological properties of quantum materials?",
+      "preg.c1": "Ultrafast light",
+      "preg.c2": "Electron dynamics",
+      "preg.c3": "Optical response",
+      "preg.c4": "Electronic structure and topology",
+      "preg.final": "Can ultrafast light reveal and control the topology of quantum matter?",
       // Acerca
       "acerca.eyebrow": "About the group",
       "acerca.titulo": "The science of materials that sustain the future",
@@ -279,6 +290,7 @@
       "pub.m_in": "In:",
       "pub.m_chapter": "ch.",
       // Etiquetas temáticas
+      "pub.tag_editors": "Editors’ Suggestion",
       "pub.tag_article": "Article",
       "pub.tag_preprint": "Preprint",
       "pub.tag_chapter": "Chapter",
@@ -381,6 +393,9 @@
       "not.h1": "News and updates",
       "not.intro": "Awards, new publications, new members and group events.",
       "not.intro_edit": "[EDIT with your real news]",
+      "not.n0_title": "Paper published in Physical Review B and highlighted as an Editors’ Suggestion",
+      "not.n0_sum": "Bryan Lorenzo’s thesis work on high-harmonic spectroscopy of lower- and higher-order topological insulators has been published in Physical Review B, with Carlos Batista and Jean Paul Menotti among the co-authors. The journal selected it as an Editors’ Suggestion and it tops this week’s list of highlighted papers.",
+      "not.n0_link": "Read the paper →",
       "not.n1_title": "SNI recognition: National Researcher, Category II",
       "not.n1_sum": "Prof. Dr. Alexis Chacón has been awarded the Category II National Researcher distinction by Panama's National Research System (SNI–SENACYT), in recognition of his scientific career in the theoretical physics of ultrafast spectroscopy: the study, control and characterization of gases and solid-state matter through light–matter interaction.",
       "not.n1_link": "Meet the researcher →",
@@ -492,13 +507,13 @@
   function aplicarIdioma(lang) {
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       if (el.getAttribute("data-es-original") === null) {
-        el.setAttribute("data-es-original", el.textContent);
+        el.setAttribute("data-es-original", el.innerHTML);
       }
       var key = el.getAttribute("data-i18n");
       if (lang === "en" && I18N.en[key] !== undefined) {
-        el.textContent = I18N.en[key];
+        el.innerHTML = I18N.en[key];
       } else {
-        el.textContent = el.getAttribute("data-es-original");
+        el.innerHTML = el.getAttribute("data-es-original");
       }
     });
     localizarFechas(lang);

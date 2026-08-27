@@ -409,3 +409,17 @@ html.embebido .nav__links { gap: 2px; }
 html.embebido .nav__links a { font-size: 0.83rem; padding: 5px 10px; color: var(--gris-700); }
 html.embebido .nav__links a:hover { background: transparent; color: var(--azul-800); text-decoration: underline; text-underline-offset: 4px; }
 html.embebido .lang-btn { font-size: 0.75rem; padding: 3px 10px; }
+
+/* ---------- Preguntas científicas ---------- */
+.preguntas { display: grid; gap: 16px; margin-top: 28px; }
+.pregunta { margin: 0; padding: 22px 26px; background: var(--superficie); border: 1px solid var(--borde);
+  border-left: 4px solid var(--acento); border-radius: var(--radio);
+  font-family: var(--fuente-titulo); font-size: clamp(1.02rem, 1.8vw, 1.28rem); line-height: 1.5; color: var(--azul-900); }
+.pregunta--final { margin-top: 26px; border: 0; text-align: center; color: #fff;
+  background: linear-gradient(135deg, var(--azul-800), var(--azul-600));
+  font-size: clamp(1.12rem, 2.1vw, 1.45rem); box-shadow: var(--sombra); }
+.cadena { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap;
+  align-items: center; justify-content: center; gap: 10px; }
+.cadena li { background: var(--gris-100); border: 1px solid var(--borde); border-radius: 999px;
+  padding: 9px 16px; font-size: 0.88rem; font-weight: 600; color: var(--azul-800); }
+.cadena .cadena__flecha { background: none; border: 0; padding: 0 2px; color: var(--acento); font-size: 1.15rem; }
