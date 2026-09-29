@@ -384,6 +384,9 @@
       "fom.tesis_lista_intro": "Theses defended and approved under the group's supervision.",
       "fom.grado_lic": "B.Sc. in Physics",
       "fom.tesis_vargas": "High-order harmonic generation in the Weyl semimetal TaAs",
+      "fom.tesis_vargas_titulo": "Thesis: “Characterization of Weyl semimetals from high-order harmonic generation” (University of Panama, 2026).",
+      "fom.tesis_vargas_resumen": "<strong>Abstract.</strong> Topological phases of matter such as Weyl semimetals (WSMs) host chiral quasiparticles and transport properties that are robust against perturbations, making them promising for a new generation of electronic and spintronic devices. Their experimental characterization, however, remains challenging: techniques such as ARPES visualize the band structure but cannot directly measure topological invariants and may damage the material. High-harmonic generation (HHG) spectroscopy emerges as a non-destructive optical alternative. This thesis investigates the usefulness of HHG for characterizing TaAs, a Weyl semimetal, using two tight-binding models (M2B and M4B) and the time-dependent density-matrix formalism. We show that observables such as harmonic intensity, helicity and circular dichroism are correlated with the topology associated with the Weyl nodes, and that both low- and high-order harmonics exhibit helicity and dichroism. The predictions agree qualitatively with two recent experiments on TaAs; the discrepancies are attributed to the model approximations, the laser intensity and the integration region in the Brillouin zone. The results demonstrate that HHG is a viable method to access topological and structural information in WSMs non-invasively, and lay the groundwork for studying ultrafast electron dynamics in other topological materials.",
+      "fom.tesis_vargas_pdf": "Read the full thesis (PDF, in Spanish) →",
       "fom.tesis_lorenzo": "High-order harmonic spectroscopy of topological Kagome materials",
       "fom.tesis_titulo": "Would you like to do your thesis with us?",
       "fom.tesis_desc": "Our theses tackle open problems in ultrafast physics and quantum materials, and several have led to publications and preprints with the students as first authors.",
@@ -462,6 +465,7 @@
       "gal.cap_sustentacion": "Thesis defence",
       "gal.cap_egresado": "Thesis approved",
       "gal.cap_seminario": "Group seminar",
+      "gal.cap_sni": "SNI recognition",
       // --- Contacto ---
       "con.miga": "Contact",
       "con.h1": "Contact",
